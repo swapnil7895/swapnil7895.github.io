@@ -7,7 +7,6 @@ import { config } from "@/config";
 const PHRASES = config.hero.typingPhrases;
 
 function useTyping(phrases: string[], speed = 60, pause = 2400) {
-  const [text, setText] = useState("");
   const [pi, setPi] = useState(0);
   const [ci, setCi] = useState(0);
   const [del, setDel] = useState(false);
@@ -18,10 +17,9 @@ function useTyping(phrases: string[], speed = 60, pause = 2400) {
     else if (!del && ci === cur.length) t = setTimeout(() => setDel(true), pause);
     else if (del && ci > 0)             t = setTimeout(() => setCi(c => c - 1), speed / 2);
     else { t = setTimeout(() => { setDel(false); setPi(i => (i + 1) % phrases.length); }, speed / 2); }
-    setText(cur.slice(0, ci));
     return () => clearTimeout(t);
   }, [ci, del, pi, phrases, speed, pause]);
-  return text;
+  return phrases[pi].slice(0, ci);
 }
 
 export default function HeroSection() {

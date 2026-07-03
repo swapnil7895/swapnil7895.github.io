@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 
 const POLAROIDS = [
   { caption: "Volunteering with RESQ — street rescue, Pune", rotate: "-5deg", top: "0px", image: "/images/resq/IMG20241006134014 (1).jpg" },
@@ -61,6 +60,7 @@ export default function AnimalGallery() {
                 boxShadow: "0 10px 40px rgba(0,0,0,0.4)",
                 width: "160px",
               }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img 
                   src={photo.image} 
                   alt={photo.caption} 
