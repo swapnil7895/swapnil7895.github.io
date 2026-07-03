@@ -11,7 +11,7 @@ export const config = {
   email: "swapnildhamal7895@gmail.com", // 🔧 Replace with your real email
   github: "https://github.com/swapnil7895", // 🔧 Replace
   linkedin: "https://www.linkedin.com/in/swapnil-dhamal-33b5b2220/", // 🔧 Replace
-  resumeUrl: "/resume.pdf", // Ensure resume.pdf is in the public directory
+  resumeUrl: "https://drive.google.com/file/d/1ldU-OsHY5ify57bzJPqmTiLEhdoH51sV/view?usp=sharing", // 🔗 Paste your Google Drive link here (Make sure sharing is set to 'Anyone with the link')
 
   // Hero Section
   hero: {
