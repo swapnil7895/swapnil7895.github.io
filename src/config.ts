@@ -15,7 +15,8 @@ export const config = {
 
   // Hero Section
   hero: {
-    profileImage: "/images/profile.png", // 📸 Add your smiling picture here
+    profileImage: "/images/profile.png", // 📸 Desktop profile picture
+    profileImageMobile: "/images/profile-mob.png", // 📸 Mobile vertical profile picture
     typingPhrases: [
       "Python Engineer & SDET",
       "Cloud Automation Builder",

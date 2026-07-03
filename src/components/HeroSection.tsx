@@ -78,9 +78,10 @@ export default function HeroSection() {
         WebkitMaskImage: "radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent)",
       }} />
 
-      {/* Profile Image Background (Faded left side) */}
+      {/* Desktop Profile Image (Faded left side) */}
       {config.hero.profileImage && (
         <motion.div
+          className="hidden md:block"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5 }}
@@ -95,9 +96,35 @@ export default function HeroSection() {
             backgroundSize: "cover",
             backgroundPosition: "center left",
             opacity: 0.45, 
-            mixBlendMode: "luminosity", // Blends nicely with the dark background
+            mixBlendMode: "luminosity",
             maskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
             WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)",
+            pointerEvents: "none",
+          }}
+        />
+      )}
+
+      {/* Mobile Profile Image (Faded top down) */}
+      {config.hero.profileImageMobile && (
+        <motion.div
+          className="block md:hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            height: "100%", 
+            zIndex: 0,
+            backgroundImage: `url(${config.hero.profileImageMobile})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+            opacity: 0.35, 
+            mixBlendMode: "luminosity",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 80%)",
             pointerEvents: "none",
           }}
         />
