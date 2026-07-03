@@ -130,14 +130,14 @@ export default function HeroSection() {
         />
       )}
 
-      <div className="container relative z-10 text-right md:text-center px-7">
+      <div className="container relative z-10 text-center px-7">
 
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2 mb-12 w-full justify-end md:justify-center"
+          className="inline-flex items-center gap-2 mb-12 w-full justify-center"
         >
           <span style={{
             padding: "6px 16px", borderRadius: "9999px", fontSize: "12px", fontWeight: 600,
@@ -173,7 +173,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35 }}
-          className="flex items-center justify-end md:justify-center mb-5 gap-1"
+          className="flex items-center justify-center mb-5 gap-1"
           style={{
             fontSize: "clamp(1rem, 2.5vw, 1.35rem)",
             fontWeight: 500,
@@ -197,7 +197,7 @@ export default function HeroSection() {
             lineHeight: 1.8,
             fontWeight: 400,
           }}
-          className="ml-auto md:mx-auto mb-12"
+          className="mx-auto mb-12"
         >
           {config.hero.subtext}
         </motion.p>
@@ -207,7 +207,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex gap-3 justify-end md:justify-center flex-wrap"
+          className="flex gap-3 justify-center flex-wrap"
         >
           <a href="#projects" style={{
             padding: "13px 30px", borderRadius: "10px",
@@ -239,13 +239,13 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="flex gap-10 justify-end md:justify-center flex-wrap mt-[72px] pt-10"
+          className="flex gap-10 justify-center flex-wrap mt-[72px] pt-10"
           style={{
             borderTop: "1px solid var(--border)",
           }}
         >
           {config.hero.stats.map(({ num, label }) => (
-            <div key={label} className="text-right md:text-center">
+            <div key={label} className="text-center">
               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--text)", letterSpacing: "-0.03em" }}>{num}</div>
               <div style={{ fontSize: "0.78rem", color: "var(--muted)", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>{label}</div>
             </div>
