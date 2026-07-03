@@ -130,14 +130,14 @@ export default function HeroSection() {
         />
       )}
 
-      <div className="container" style={{ position: "relative", zIndex: 1, textAlign: "center", padding: "0 28px" }}>
+      <div className="container relative z-10 text-right md:text-center px-7">
 
         {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{ display: "inline-flex", alignItems: "center", gap: "8px", marginBottom: "48px" }}
+          className="inline-flex items-center gap-2 mb-12 w-full justify-end md:justify-center"
         >
           <span style={{
             padding: "6px 16px", borderRadius: "9999px", fontSize: "12px", fontWeight: 600,
@@ -173,16 +173,12 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.35 }}
+          className="flex items-center justify-end md:justify-center mb-5 gap-1"
           style={{
             fontSize: "clamp(1rem, 2.5vw, 1.35rem)",
             fontWeight: 500,
             color: "var(--text-2)",
             height: "2rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            marginBottom: "20px",
-            gap: "4px",
           }}
         >
           {typed}
@@ -198,10 +194,10 @@ export default function HeroSection() {
             fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
             color: "var(--muted)",
             maxWidth: "500px",
-            margin: "0 auto 48px",
             lineHeight: 1.8,
             fontWeight: 400,
           }}
+          className="ml-auto md:mx-auto mb-12"
         >
           {config.hero.subtext}
         </motion.p>
@@ -211,7 +207,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}
+          className="flex gap-3 justify-end md:justify-center flex-wrap"
         >
           <a href="#projects" style={{
             padding: "13px 30px", borderRadius: "10px",
@@ -243,15 +239,13 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
+          className="flex gap-10 justify-end md:justify-center flex-wrap mt-[72px] pt-10"
           style={{
-            display: "flex", gap: "40px", justifyContent: "center", flexWrap: "wrap",
-            marginTop: "72px",
-            paddingTop: "40px",
             borderTop: "1px solid var(--border)",
           }}
         >
           {config.hero.stats.map(({ num, label }) => (
-            <div key={label} style={{ textAlign: "center" }}>
+            <div key={label} className="text-right md:text-center">
               <div style={{ fontSize: "1.75rem", fontWeight: 800, color: "var(--text)", letterSpacing: "-0.03em" }}>{num}</div>
               <div style={{ fontSize: "0.78rem", color: "var(--muted)", fontWeight: 500, marginTop: "2px", letterSpacing: "0.04em" }}>{label}</div>
             </div>
