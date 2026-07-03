@@ -30,6 +30,16 @@ export default function AnimalGallery() {
             <span style={{ color: "#fb7185", fontWeight: 600 }}>RESQ Charitable Trust</span>
             {" "}— Pune&apos;s largest animal rescue organisation.
           </p>
+          <p style={{ 
+            marginTop: "24px", 
+            fontStyle: "italic", 
+            fontFamily: 'ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+            color: "var(--text-2)", 
+            fontSize: "1.1rem",
+            fontWeight: 500
+          }}>
+            &quot;Because I believe animals have as much right to live on this planet as we do.&quot;
+          </p>
         </motion.div>
 
         {/* Polaroid fan */}
