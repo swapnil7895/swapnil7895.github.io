@@ -19,7 +19,7 @@ const PROJECTS = [
     description: "LangGraph ReAct agent with multi-model Gemini API fallback. FastAPI backend, chat-style UI, Pydantic-validated tool calls for policy checks and approval workflows.",
     tags: ["LangGraph", "Gemini API", "FastAPI", "Pydantic", "ReAct", "Python"],
     categories: ["GenAI"],
-    github: "https://github.com/YOUR_GITHUB_USERNAME/travel-reimbursement-agent",
+    github: "https://github.com/swapnil7895/travel-approval-agent",
     flagship: true,
     color: "#10b981",
     colorDim: "rgba(16,185,129,0.12)",
@@ -31,7 +31,7 @@ const PROJECTS = [
     description: "Selenium bot applying to LinkedIn & Naukri roles with tailored responses per listing generated via Google AI API. Reads JDs, adapts cover content automatically.",
     tags: ["Selenium", "Google AI API", "Python", "Automation", "Naukri"],
     categories: ["GenAI", "Automation"],
-    github: "https://github.com/YOUR_GITHUB_USERNAME/job-application-bot",
+    github: "https://github.com/swapnil7895/job-apply-automation",
     color: "#60a5fa",
     colorDim: "rgba(96,165,250,0.1)",
     colorBorder: "rgba(96,165,250,0.18)",
@@ -42,7 +42,7 @@ const PROJECTS = [
     description: "Chatbot with runtime provider switching between OpenAI and Gemini APIs. Users toggle LLM providers mid-session without losing conversation context.",
     tags: ["OpenAI API", "Gemini API", "FastAPI", "Python", "Streaming"],
     categories: ["GenAI"],
-    github: "https://github.com/YOUR_GITHUB_USERNAME/conversational-qa-app",
+    github: "#",
     color: "#a78bfa",
     colorDim: "rgba(167,139,250,0.1)",
     colorBorder: "rgba(167,139,250,0.18)",
@@ -53,7 +53,7 @@ const PROJECTS = [
     description: "AWS Lambda & Batch test suite for Snowflake-backed cloud data at Nutanix. CloudWatch monitoring, pytest-xdist parallelization significantly cut runtime.",
     tags: ["AWS Lambda", "AWS Batch", "Snowflake", "CloudWatch", "pytest-xdist"],
     categories: ["Automation", "SDET"],
-    github: "https://github.com/YOUR_GITHUB_USERNAME/datalens-qa",
+    github: "#",
     color: "#fb923c",
     colorDim: "rgba(251,146,60,0.1)",
     colorBorder: "rgba(251,146,60,0.18)",
@@ -189,38 +189,40 @@ export default function ProjectGrid() {
                           {p.title}
                         </h3>
                       </div>
-                      <a
-                        href={p.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        id={`github-${p.id}`}
-                        className="flex-shrink-0"
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "6px",
-                          fontSize: "0.8rem",
-                          fontWeight: 600,
-                          color: "var(--muted)",
-                          textDecoration: "none",
-                          border: "1px solid var(--border-2)",
-                          borderRadius: "9999px",
-                          padding: "6px 14px",
-                          transition: "all 0.2s",
-                          whiteSpace: "nowrap",
-                        }}
-                        onMouseEnter={e => {
-                          (e.currentTarget as HTMLElement).style.color = "var(--text)";
-                          (e.currentTarget as HTMLElement).style.borderColor = "var(--muted)";
-                        }}
-                        onMouseLeave={e => {
-                          (e.currentTarget as HTMLElement).style.color = "var(--muted)";
-                          (e.currentTarget as HTMLElement).style.borderColor = "var(--border-2)";
-                        }}
-                      >
-                        <GithubIcon />
-                        GitHub
-                      </a>
+                      {p.github && p.github !== "#" && (
+                        <a
+                          href={p.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          id={`github-${p.id}`}
+                          className="flex-shrink-0"
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            gap: "6px",
+                            fontSize: "0.8rem",
+                            fontWeight: 600,
+                            color: "var(--muted)",
+                            textDecoration: "none",
+                            border: "1px solid var(--border-2)",
+                            borderRadius: "9999px",
+                            padding: "6px 14px",
+                            transition: "all 0.2s",
+                            whiteSpace: "nowrap",
+                          }}
+                          onMouseEnter={e => {
+                            (e.currentTarget as HTMLElement).style.color = "var(--text)";
+                            (e.currentTarget as HTMLElement).style.borderColor = "var(--muted)";
+                          }}
+                          onMouseLeave={e => {
+                            (e.currentTarget as HTMLElement).style.color = "var(--muted)";
+                            (e.currentTarget as HTMLElement).style.borderColor = "var(--border-2)";
+                          }}
+                        >
+                          <GithubIcon />
+                          GitHub
+                        </a>
+                      )}
                     </div>
 
                     {/* Description */}
